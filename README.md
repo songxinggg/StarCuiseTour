@@ -1,6 +1,5 @@
-# MollywoodSchool
-
-魔莱坞学院 - 许悦，王冠
+# StarCuiseTour
+星海游轮之旅
 
 ## Getting started
 
