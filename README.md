@@ -1,6 +1,5 @@
 # StarCuiseTour
-星海游轮之旅
-
+星海游轮之旅 --口袋方舟做的一款rp变身躲猫猫类型游戏
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
