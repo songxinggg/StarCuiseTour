@@ -1,0 +1,64 @@
+import { ConfigBase, IElementBase } from "./ConfigBase";
+const EXCELDATA:Array<Array<any>> = [["ID","NpcName","NameColour","NamePos","FUNS","text","distance","attitude","action","time","aniRoundTime","cd","outTime","NightState","NightPos","NightRot","NightFuns","NightAction","NightActionRate","NightText","state","StationID","NightID","holdID","holdPoint","holdOff","Male"],["","Language","","","","","","","","","","","","","","","","","","","","","","","","",""],[1,"NPC_Name_1",[0.1,1,0.8],new mw.Vector(0,0,100),[138],["Text_Text_143"],300,null,["8352"],1,[5,10],15,[0,0],2,new mw.Vector(8280,-6820,-87),new mw.Vector(0,0,-60),null,"29758",0.8,["Text_Text_561"],1,null,null,0,0,null,1,"游轮管家"]];
+export interface INPCConfigElement extends IElementBase{
+ 	/**id*/
+	ID:number
+	/**npc名称*/
+	NpcName:string
+	/**名称颜色*/
+	NameColour:Array<number>
+	/**名称相对位置*/
+	NamePos:mw.Vector
+	/**对应功能（索引EVENTConfig表的ID）*/
+	FUNS:Array<number>
+	/**随机触发对话文本文本*/
+	text:Array<string>
+	/**触发距离（半径）*/
+	distance:number
+	/**姿态*/
+	attitude:string
+	/**动作*/
+	action:Array<string>
+	/**动画速率*/
+	time:number
+	/**动画播放间隔时间（区间随机）*/
+	aniRoundTime:Array<number>
+	/**冷却时间*/
+	cd:number
+	/**NPC出现时间区间段0|0表示NPC全天出现。*/
+	outTime:Array<number>
+	/**是否为夜晚NPC（1是，2否）*/
+	NightState:number
+	/**夜晚开启后该NPC的位置*/
+	NightPos:mw.Vector
+	/**夜晚开启后该NPC的旋转*/
+	NightRot:mw.Vector
+	/**夜晚开启后该NPC的对话内容*/
+	NightFuns:Array<number>
+	/**夜晚播放的动作*/
+	NightAction:string
+	/**夜晚播放动作速率，越大越快*/
+	NightActionRate:number
+	/**夜晚随机冒话*/
+	NightText:Array<string>
+	/**npc状态（动态双端，静态C）*/
+	state:number
+	/**移动坐标（读取NPCStation表）*/
+	StationID:Array<number>
+	/**夜晚移动坐标（读取NPCStation表）*/
+	NightID:Array<number>
+	/**手持物id*/
+	holdID:number
+	/**手持物挂点*/
+	holdPoint:number
+	/**手持物位置旋转缩放*/
+	holdOff:mw.Vector[]
+	/**女为0，男为1*/
+	Male:number
+ } 
+export class NPCConfigConfig extends ConfigBase<INPCConfigElement>{
+	constructor(){
+		super(EXCELDATA);
+	}
+
+}
